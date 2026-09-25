@@ -5,6 +5,6 @@
   3. NEVER put a service_role key in this file.
 */
 window.BOZA_CONFIG = {
-  SUPABASE_URL: "PASTE_YOUR_SUPABASE_PROJECT_URL_HERE",
-  SUPABASE_ANON_KEY: "PASTE_YOUR_SUPABASE_ANON_KEY_HERE"
+  SUPABASE_URL: "Https://glhphqlahkljataogmwy.supabase.co",
+  SUPABASE_ANON_KEY: "sb_publishable_HP1ra_YVmZEQ42swzIp9tQ_nUuPTR2s"
 };

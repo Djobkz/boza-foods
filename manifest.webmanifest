@@ -1,0 +1,9 @@
+{
+  "name":"Boza Foods",
+  "short_name":"Boza Foods",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#f6f6f6",
+  "theme_color":"#b91c1c",
+  "icons":[]
+}

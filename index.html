@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#b91c1c">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>Boza Foods</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header>
+    <div>
+      <h1>Boza Foods</h1>
+      <p>Prise de commandes</p>
+    </div>
+    <div class="online" id="connection">● Local</div>
+  </header>
+
+  <main>
+    <section id="login" class="panel">
+      <h2>Connexion</h2>
+      <p class="muted">Utilise les identifiants créés dans Supabase.</p>
+      <input id="email" type="email" placeholder="Email" autocomplete="username">
+      <input id="password" type="password" placeholder="Mot de passe" autocomplete="current-password">
+      <button id="loginBtn" class="primary">Se connecter</button>
+      <p id="loginMsg" class="error"></p>
+    </section>
+
+    <section id="appArea" hidden>
+      <nav class="tabs">
+        <button data-tab="order" class="tab active">Nouvelle commande</button>
+        <button data-tab="kitchen" class="tab">Cuisine</button>
+        <button data-tab="history" class="tab">Historique</button>
+      </nav>
+
+      <section id="orderTab" class="tabPanel">
+        <div class="order-layout">
+          <div>
+            <div class="panel">
+              <div class="topline">
+                <div>
+                  <h2>Type de commande</h2>
+                  <div class="segmented">
+                    <button id="dineIn" class="choice active">Sur place</button>
+                    <button id="takeaway" class="choice">À emporter</button>
+                  </div>
+                </div>
+                <div class="orderNumber">
+                  <span>N°</span><strong id="nextOrderNo">—</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <div class="categoryBar" id="categories"></div>
+              <div id="menu" class="menuGrid"></div>
+            </div>
+          </div>
+
+          <aside class="panel cartPanel">
+            <div class="topline">
+              <h2>Commande</h2>
+              <button id="clearCart" class="linkBtn">Vider</button>
+            </div>
+            <div id="cart"></div>
+            <div class="totalRow"><span>Total</span><strong id="total">0 DA</strong></div>
+            <button id="sendOrder" class="primary big">Enregistrer</button>
+            <p id="orderMsg" class="success"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="kitchenTab" class="tabPanel" hidden>
+        <div class="panel">
+          <div class="topline">
+            <div>
+              <h2>Cuisine</h2>
+              <p class="muted">Les nouvelles commandes apparaissent automatiquement.</p>
+            </div>
+            <button id="refreshKitchen" class="secondary">Actualiser</button>
+          </div>
+          <div id="kitchenOrders" class="ordersGrid"></div>
+        </div>
+      </section>
+
+      <section id="historyTab" class="tabPanel" hidden>
+        <div class="panel">
+          <div class="topline">
+            <div>
+              <h2>Historique</h2>
+              <p class="muted">Toutes les commandes enregistrées.</p>
+            </div>
+            <button id="refreshHistory" class="secondary">Actualiser</button>
+          </div>
+          <div id="historyOrders"></div>
+        </div>
+      </section>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
